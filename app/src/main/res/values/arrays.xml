@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="actores_img">
+        <item>@drawable/downey</item>
+        <item>@drawable/bale</item>
+        <item>@drawable/cruise</item>
+        <item>@drawable/momoa</item>
+        <item>@drawable/dicaprio</item>
+        <item>@drawable/pitt</item>
+        <item>@drawable/stan</item>
+        <item>@drawable/depp</item>
+    </integer-array>
+</resources>

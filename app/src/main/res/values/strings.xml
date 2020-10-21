@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="ver_detalles">Ver detalles</string>
+    <string name="lista_de_actores">Actores reconocidos</string>
+    <string-array name="actores">
+        <item>Robert Downey Jr.</item>
+        <item>Christian Bale</item>
+        <item>Tom Cruise</item>
+        <item>Jason Momoa</item>
+        <item>Leonardo Dicaprio</item>
+        <item>Brad Pitt</item>
+        <item>Sebastian Stan</item>
+        <item>Johnny Depp</item>
+    </string-array>
+    <string-array name="nacionalidad">
+        <item>Estados Unidos</item>
+        <item>Reino Unido</item>
+        <item>Estados Unidos</item>
+        <item>Estados Unidos</item>
+        <item>Estados Unidos</item>
+        <item>Estados Unidos</item>
+        <item>Rumania</item>
+        <item>Estados Unidos</item>
+    </string-array>
+
+    <string-array name="links">
+        <item>https://es.wikipedia.org/wiki/Robert_Downey_Jr.</item>
+        <item>https://es.wikipedia.org/wiki/Christian_Bale</item>
+        <item>https://es.wikipedia.org/wiki/Tom_Cruise</item>
+        <item>https://es.wikipedia.org/wiki/Jason_Momoa</item>
+        <item>https://es.wikipedia.org/wiki/Leonardo_DiCaprio</item>
+        <item>https://es.wikipedia.org/wiki/Brad_Pitt</item>
+        <item>https://es.wikipedia.org/wiki/Sebastian_Stan</item>
+        <item>https://es.wikipedia.org/wiki/Johnny_Depp</item>
+    </string-array>
+
+    <string-array name="descripcion">
+        <item>
+            Robert John Downey Jr. (Nueva York; 4 de abril de 1965) es un actor, actor de voz, productor y cantante estadounidense. Inició su carrera como actor a temprana edad apareciendo en varios filmes dirigidos por su padre, Robert Downey Sr., y en su infancia estudió actuación en varias academias de Nueva York. Se mudó con su padre a California, pero abandonó sus estudios para enfocarse completamente en su carrera.
+        </item>
+        <item>
+            Christian Charles Philip Bale (Haverfordwest, Gales; 30 de enero de 1974), más conocido como Christian Bale, es un actor británico ganador de dos Globos de Oro, 2 premios del SAG y un Óscar. Se le considera uno de los actores del estilo de método más importantes de su generación, debido a su intensidad y sus transformaciones drásticas hacia su cuerpo en diversos papeles.
+        </item>
+        <item>
+            Thomas Cruise Mapother IV (Siracusa, Nueva York; 3 de julio de 1962) más conocido como Tom Cruise, es un actor y productor de cine estadounidense ganador de tres premios Globo de Oro.
+            \n\nHa protagonizado películas como Taps (1981), Risky Business (1983), Top Gun (1986), El color del dinero (1986), Rain Man (1988), Days of thunder (1990), A few good men (1992),
+            Entrevista con el vampiro (1994), Jerry Maguire (1996), Eyes Wide Shut (1999), Minority Report (2002), El último samurái (2003), Collateral (2004), La guerra de los mundos (2005),
+            Valkyrie (2008), Jack Reacher (2012), Oblivion (2013), Al filo del mañana (2014), American Made (2017) y la saga de Misión imposible (1996-2018), entre otras.
+            \n\nCon un patrimonio neto de 570 millones de $ en 2020, Tom Cruise es considerado como uno de los actores mejor pagados y más influyentes de Hollywood.
+            \nSus películas han recaudado en total más de 4000 millones de dólares en los Estados Unidos y más de 10.000 millones de dólares a nivel mundial, convirtiendo a Cruise en uno de los actores más taquilleros de la industria del cine de todos los tiempos.
+        </item>
+        <item>
+            Joseph Jason Namakaeha Momoa (Honolulu, 1 de agosto de 1979) es un actor, actor de voz, escritor, productor y director estadounidense. Comenzó su carrera como actor luego de mentir sobre ser un modelo profesional, lo cual le concedió un papel en la serie Baywatch, en la que debutó en 1999 y participó por dos temporadas. Más tarde, ganó popularidad interpretando a Ronon Dex en la serie de televisión Stargate Atlantis desde 2004 hasta 2009.
+            \n\nEn 2011, siguió adquiriendo fama al interpretar a Khal Drogo en la serie Game of Thrones durante sus dos primeras temporadas. Posteriormente, sería seleccionado para interpretar a Aquaman en el Universo extendido de DC, comenzando con un cameo en Batman v Superman: Dawn of Justice (2016), y más tarde como parte del elenco en Liga de la Justicia (2017) y como protagonista en Aquaman (2018). Por otra parte, también protagonizó las series Frontier y See.
+        </item>
+        <item>
+            Leonardo Wilhelm DiCaprio1​ (Los Ángeles; 11 de noviembre de 1974)2​ es un actor, productor de cine, productor de televisión, ambientalista y guionista estadounidense.
+            \n\nHa recibido numerosos premios entre los que destacan, un Óscar al mejor actor y un premio BAFTA al mejor actor por su actuación en El renacido (2015), dos Globos de Oro al mejor actor de drama por sus actuaciones en El aviador (2004) y El renacido, y un Globo de Oro al mejor actor de comedia o musical por El lobo de Wall Street (2013). Adicionalmente, ha ganado el premio del Sindicato de Actores, el Oso de Plata y un Premio Chlotrudis.
+        </item>
+        <item>
+            William Bradley Pitt (Shawnee, Oklahoma; 18 de diciembre de 1963),2​ conocido como Brad Pitt, es un actor y productor de cine estadounidense. Además, por su trabajo interpretativo, ha sido nominado en cuatro ocasiones a los Premios Óscar (ganando dicho premio como productor en 2013 y como mejor actor de reparto en 20203​) y en cuatro a los Premios Globo de Oro (ganó como mejor actor de reparto en 1995 y 2020.4​) Su significativa presencia mediática se debe también a su consideración como uno de los hombres más atractivos del mundo.
+        </item>
+        <item>
+            Sebastian Stan (Constanza, Rumania, 13 de agosto de 1982) es un actor rumano-estadounidense.1​ Es conocido por interpretar a Carter Baizen en Gossip Girl y Bucky Barnes / Winter Soldier en las películas del Universo cinematográfico de Marvel Capitán América: El Primer Vengador (2011), Captain America: The Winter Soldier (2014), Capitán América: Civil War (2016), Black Panther (2018), Avengers: Infinity War (2018), Avengers: Endgame (2019).
+        </item>
+        <item>
+            Sus películas más taquilleras han sido la saga Piratas del Caribe con más de 3,9 mil millones de dólares, seguida de Alicia en el país de las maravillas con unos ingresos mundiales de 1024 millones, Charlie y la fábrica de chocolate con 474 millones y The Tourist con 278 millones en todo el mundo. La revista Vanity Fair lo ubicó en la segunda posición en la lista de «Las cuarenta celebridades de Hollywood con más ganancias a lo largo de 2010», con ingresos estimados en 100 millones de dólares.​
+            \n\nEn 2003 y 2009 fue elegido como el hombre vivo más sexy del mundo por la revista estadounidense People.
+        </item>
+    </string-array>
+
+
+</resources>
