@@ -10,6 +10,7 @@ public class Persona {
     int botonId;
     String descripcion;
     String link;
+    String hola;
 
     public Persona(String nombre, String edad, int foto, int botonId, String descripcion,String link) {
         this.nombre = nombre;
