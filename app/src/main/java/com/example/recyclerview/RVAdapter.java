@@ -23,6 +23,8 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonaViewHolder> {
@@ -60,6 +62,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonaViewHolder>
         holder.nombrePersona.setText(personas.get(position).nombre);
         holder.edadPersona.setText(personas.get(position).edad);
         holder.botonDetalle.setId(personas.get(position).botonId);
+        holder.descripcion.setText(personas.get(position).descripcion);
+        holder.link.setText(personas.get(position).link);
         Drawable original = context.getResources().getDrawable(personas.get(position).foto,null);
 
         Bitmap originalBitmap = ((BitmapDrawable)original).getBitmap();
@@ -67,6 +71,10 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonaViewHolder>
         roundedBitmapDrawable.setCornerRadius(originalBitmap.getHeight());
 
         holder.fotoPersona.setImageDrawable(roundedBitmapDrawable);
+
+        holder.setOnClickListeners();
+
+
     }
 
     @Override
@@ -74,127 +82,60 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonaViewHolder>
         return personas.size();
     }
 
-    public static class PersonaViewHolder extends RecyclerView.ViewHolder{
+    public static class PersonaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         CardView cardView;
         TextView nombrePersona;
         TextView edadPersona;
         ImageView fotoPersona;
         Button botonDetalle;
-        LayoutInflater inflater;
-        AlertDialog.Builder dialogBuilder;
         Dialog dialog;
-        Button btnCancelar;
+        TextView descripcion;
+        TextView link;
+
 
         public PersonaViewHolder(@NonNull final View itemView, final List<Persona> personas) {
             super(itemView);
-            cardView = (CardView)itemView.findViewById(R.id.cb);
+            cardView = (CardView) itemView.findViewById(R.id.cb);
             nombrePersona = (TextView) itemView.findViewById(R.id.nombrePersona);
             edadPersona = (TextView) itemView.findViewById(R.id.edadPersona);
             fotoPersona = (ImageView) itemView.findViewById(R.id.fotoPersona);
             botonDetalle = (Button) itemView.findViewById(R.id.btnDetalle);
+            descripcion = (TextView) itemView.findViewById(R.id.txtdetalle);
+            link = (TextView) itemView.findViewById(R.id.txtl);
 
-            this.inflater=LayoutInflater.from(itemView.getContext());
-
-            botonDetalle.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int id = botonDetalle.getId();
-                    String descripcion,link;
-                    switch (id){
-                        case 0 :
-                            descripcion=personas.get(0).descripcion;
-                            link=personas.get(0).link;
-                            crearDialog(itemView,nombrePersona,descripcion,link);
-                            break;
-                        case 1 :
-                            descripcion=personas.get(1).descripcion;
-                            link=personas.get(1).link;
-                            crearDialog(itemView,nombrePersona, descripcion, link);
-                            break;
-                        case 2 :
-                            descripcion=personas.get(2).descripcion;
-                            link=personas.get(2).link;
-                            crearDialog(itemView,nombrePersona, descripcion, link);
-                            break;
-                        case 3 :
-                            descripcion=personas.get(3).descripcion;
-                            link=personas.get(3).link;
-                            crearDialog(itemView,nombrePersona, descripcion, link);
-                            break;
-                        case 4 :
-                            descripcion=personas.get(4).descripcion;
-                            link=personas.get(4).link;
-                            crearDialog(itemView,nombrePersona, descripcion, link);
-                            break;
-                        case 5 :
-                            descripcion=personas.get(5).descripcion;
-                            link=personas.get(5).link;
-                            crearDialog(itemView,nombrePersona, descripcion, link);
-                            break;
-                        case 6 :
-                            descripcion=personas.get(6).descripcion;
-                            link=personas.get(6).link;
-                            crearDialog(itemView,nombrePersona, descripcion, link);
-                            break;
-                        case 7 :
-                            descripcion=personas.get(7).descripcion;
-                            link=personas.get(7).link;
-                            crearDialog(itemView,nombrePersona, descripcion, link);
-                            break;
-                    }
-
-                }
-
-                private void crearDialog(final View itemView, TextView nombrePersona, String descripcion, final String link) {
-                    final String url = link;
-                    int width = (int)(itemView.getResources().getDisplayMetrics().widthPixels*0.90);
-                    int height = (int)(itemView.getResources().getDisplayMetrics().heightPixels*0.50);
-                    dialog = new Dialog(itemView.getContext());
-                    dialog.setContentView(R.layout.popup);
-                    dialog.setTitle(nombrePersona.getText().toString());
-                    TextView text = (TextView) dialog.findViewById(R.id.txtTitulo);
-                    TextView txtDescripcion = (TextView) dialog.findViewById(R.id.txtDescripcion);
-                    txtDescripcion.setText(descripcion);
-                    text.setText(nombrePersona.getText().toString());
-                    Button regresar = (Button)dialog.findViewById(R.id.btnRegresar);
-                    regresar.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Uri uri = Uri.parse(url);
-                            Intent intent = new Intent(Intent.ACTION_VIEW,uri);
-                            itemView.getContext().startActivity(intent);
-                        }
-                    });
-                    //dialog.getWindow().setLayout(width,);
-                    txtDescripcion.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
-                    dialog.show();
-                }
-            });
         }
 
-        public void createNewDescriptionDialog(String s){
-            dialogBuilder = new AlertDialog.Builder(itemView.getContext());
-            final View descriptionPopupView = inflater.inflate(R.layout.popup,null);
-            btnCancelar=(Button)descriptionPopupView.findViewById(R.id.btnRegresar);
+        public void setOnClickListeners() {
+            botonDetalle.setOnClickListener(this);
+        }
 
-            dialogBuilder.setView(descriptionPopupView);
-            dialog = dialogBuilder.create();
-            TextView title = (TextView) dialog.findViewById(R.id.txtTitulo);
-            title.setText(s);
+        public void onClick(View v) {
+            crearDialog(v,nombrePersona,descripcion,link);
+        }
+
+        private void crearDialog(final View itemView, TextView nombrePersona, TextView descripcion, TextView link) {
+            final String url = link.getText().toString();
+            int width = (int)(itemView.getResources().getDisplayMetrics().widthPixels*0.90);
+            int height = (int)(itemView.getResources().getDisplayMetrics().heightPixels*0.50);
+            dialog = new Dialog(itemView.getContext());
+            dialog.setContentView(R.layout.popup);
+            dialog.setTitle(nombrePersona.getText().toString());
+            TextView text = (TextView) dialog.findViewById(R.id.txtTitulo);
+            TextView txtDescripcion = (TextView) dialog.findViewById(R.id.txtDescripcion);
+            txtDescripcion.setText(descripcion.getText().toString());
+            text.setText(nombrePersona.getText().toString());
+            Button regresar = (Button)dialog.findViewById(R.id.btnRegresar);
+            regresar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri uri = Uri.parse(url);
+                    Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
+            //dialog.getWindow().setLayout(width,);
+            txtDescripcion.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             dialog.show();
-
-            btnCancelar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //cancelar
-                    dialog.dismiss();
-                }
-            });
         }
-
-
     }
-
-
-
 }
